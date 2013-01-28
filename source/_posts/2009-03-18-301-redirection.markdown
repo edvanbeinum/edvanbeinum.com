@@ -1,0 +1,13 @@
+---
+layout: post
+title: "301 redirection"
+date: 2009-03-18 08:05
+
+---
+<p>	To do SEO-friendly 301 redirection via your httpd.conf within <em>VirtualHost</em> or <em>Directory</em> (this also works via .htaccess)</p>
+
+    Redirect permanent / http://newdomain.com/
+
+This will retain the old URL parameters and pass them to the new site. To redirect the whole site to a single new page use RedirectMatch:
+
+    RedirectMatch permanent (.)$ http://newdomain.com/

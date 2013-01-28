@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Projects"
+date: 2011-05-22 17:42
+
+---
+A small sampling of ideas that I have actually gone on to make:
+
+<div class="box left">
+<h3> <a href="http://linkstream.edvanbeinum.com">Linkstream</a></h3>
+<p>A catgorised collection of interesting links that I really mean to read later</p>
+</div>
+
+<div class="box">
+<h3> <a href="http://getsnowshoe.com">Snowshoe</a></h3>
+<p>A static site generator written in dear old PHP. A little neglected I must admit.</p>
+</div>
+
+
+<div class="box left">
+<h3> <a href="http://hardrefresh.co.uk">Hard Refresh</a></h3>
+<p>Simple site that will detect your browser and tell you how to clear the cache</p>
+</div>
+
+<div class="box">
+<h3> <a href="http://edvanbeinum.com/music/">Music To Do Other Things By</a></h3>
+<p>Some old tosh when I thought I could play the guitar</p>
+</div>
+
+
+<div class="box left">
+<h3> <a href="http://timparishowe.com">Tim Howe Illustration</a></h3>
+<p>A Habari powered portfolio site with a bit of Flickr and Tumblr integration</p>
+</div>
+
+<div class="box">
+<h3> <a href="http://www.sandwhi.ch">Sandwhich?</a></h3>
+<p>I love sandwiches. I love websites. Here is a glorious union of the two... and also an excuse to rant about sandwiches in London</p>
+</div>
