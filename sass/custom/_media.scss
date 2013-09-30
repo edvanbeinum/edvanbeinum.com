@@ -1,0 +1,120 @@
+/**
+ * Placeholder media queries for responsive design. Modify as design requires.
+ * These follow after, and will override, the primary ('mobile first') styles
+ * The closing /mediaquery comment is required by respond.js min/max-width Media Query polyfill
+ */
+
+/* Using GS-300 */
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  body, select, input, textarea {
+	font-size: 	100%; /* 10px*/
+}
+    #container {
+        width: 300px;
+    }
+    header {
+        float: none;
+    }
+    div#logo {
+        float: left;
+	    width: 90px;
+        height: 145px;
+        margin-bottom: 15px;
+    }
+    h1 {
+        font-size: 65px;
+        margin-top: 5px;
+    }
+    header #tail {
+        display: none;
+    }
+    header .links {
+    float: right;
+    margin-top: 15px;
+}
+    div#main {
+        width: 300px;
+        margin-top: 0px;
+    }
+
+    article .box {
+        width: 300px;
+        float: none;
+    }
+    div.contents p span {
+        float: none;
+        display: block;
+    }
+    article .post-info p {
+        float: none;
+    }
+    article .post-info p:first-child {
+        margin-right: 12px;
+    }
+
+
+    footer {
+        clear: both;
+        width: 100%;
+        padding: 20px 0;
+    }
+    footer .social-guff {
+        width: 88px;
+    }
+    #gs-overlay-badge {
+	    visibility: hidden;
+    }
+    #error {
+        margin: 0 auto;
+        width: 173px;
+    }
+}/*/mediaquery*/
+
+/* Using GS-748 */
+@media only screen and (min-width : 768px) and (max-width : 977px) {
+    #container {
+        width: 748px;
+    }
+    div#logo {
+	    width: 88px;
+    }
+
+    header #tail {
+        border-width: 44px;
+    }
+    h1 {
+    margin-top: 138px;
+    }
+    div#main {
+        width: 620px;
+        margin-top: 40px;
+    }
+    article .post-info p {
+        width: 300px;
+    }
+    article .post-info p:first-child {
+        margin-right: 20px;
+    }
+
+    article .box {
+        width: 748px;
+        float: none;
+    }
+
+    footer {
+        clear: both;
+        width: 100%;
+        padding: 20px 0;
+    }
+    footer .social-guff {
+        width: 88px;
+    }
+    #gs-overlay-badge {
+	    visibility: hidden;
+    }
+    #error {
+        margin: 0 auto;
+        width: 173px;
+    }
+}/*/mediaquery*/
+

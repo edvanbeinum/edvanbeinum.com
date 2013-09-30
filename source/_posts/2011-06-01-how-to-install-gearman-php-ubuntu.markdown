@@ -11,13 +11,15 @@ This will grab serveral Gearman packages includings gearman-job-server and gearm
 PHP5-dev package is needed to get phpize which we use shortly to create the PHP gearman library. 
 
 Get the latest version of the PHP wrapper for libgearman
-
-    $ wget http://pecl.php.net/get/gearman
-    $ tar -zxf gearman
-    $ cd gearman-X.X
-    $ phpize
-    $ ./configure
-    $ make && make install
+``` bash
+$ wget http://pecl.php.net/get/gearman
+$ tar -zxf gearman
+$ cd gearman-X.X
+$ phpize
+$ ./configure
+$ make && make install
+```
+    
 
 Then add 
 

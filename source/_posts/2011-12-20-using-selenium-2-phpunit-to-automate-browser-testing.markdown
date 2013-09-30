@@ -23,8 +23,9 @@ And you'll need Java installed - openJDK is probably best as it is now the offic
 
 Start your engines:
 
+``` bash
 	java -jar /path/to/selenium-server-standalone-2.15.0.jar
-
+```
 Selenium2 Server is now running at http://localhost:4444/wd/hub by default and PHP Webdriver will connect to that automatically.
 
 ### Write browser tests in PHPUnit
@@ -32,6 +33,7 @@ Selenium2 Server is now running at http://localhost:4444/wd/hub by default and P
 We can use PHPUnit as the test runner and pull in the PHP Webdriver library into our testsuite and create automated browser tests.
 Move the PHP Webdriver library somewhere where you can access it from your tests, I personally like to put a lib/ folder inside my tests/ folder for each project.
 
+``` php
 	require_once __DIR__ . '/lib/php-webdriver/__init__.php';
 
 	class HomePageTest extends PHPUnit_Framework_TestCase
@@ -70,6 +72,7 @@ Move the PHP Webdriver library somewhere where you can access it from your tests
 		    );
 	    }
 	}
+```
 
 Here you can see that we have a regular PHPUnit test case but we can use the WebDriver library to execute browser commands. 
 The first line pulls in the PHP WebDriver library (in a real project you will probably want to put that require statement into a bootstrap file and call it via the bootstrap parameter in PHPUnit's config XML file so it is automatically included before each test is run).
