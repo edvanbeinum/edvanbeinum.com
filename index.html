@@ -41,6 +41,9 @@
               <path d="M33.52 9.96a4.125 4.125 0 00-2.903-2.918C28.056 6.375 18 6.375 18 6.375s-10.056 0-12.618.667A4.125 4.125 0 002.48 9.96C1.875 12.54 1.875 18 1.875 18s0 5.46.605 8.04a4.125 4.125 0 002.902 2.918C7.944 29.625 18 29.625 18 29.625s10.056 0 12.617-.667a4.125 4.125 0 002.903-2.918C34.125 23.46 34.125 18 34.125 18s0-5.46-.605-8.04zM14.625 22.875v-9.75L23.25 18l-8.625 4.875z" fill="#3d3d3d"/>
             </svg>
           </a>
+          <span class="social-divider"></span>
+          <a href="#" class="social-text-link">Download CV</a>
+          <a href="mailto:ed@edvanbeinum.com" class="social-text-link">Contact</a>
         </div>
       </div>
     </section>
@@ -61,28 +64,8 @@
       </div>
     </section>
 
-    <!-- Buttons -->
-    <div class="actions">
-      <a href="#" class="btn btn-primary">
-        Download CV
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 16l-6-6h4V4h4v6h4l-6 6z" fill="currentColor"/>
-          <path d="M20 18H4v2h16v-2z" fill="currentColor"/>
-        </svg>
-      </a>
-      <a href="mailto:ed@edvanbeinum.com" class="btn btn-secondary">Contact me</a>
-    </div>
-
-    <!-- Tabs -->
-    <div class="tabs-container">
-      <div class="tabs" role="tablist">
-        <button class="tab active" role="tab" aria-selected="true" data-tab="portfolio">Portfolio</button>
-        <button class="tab" role="tab" aria-selected="false" data-tab="skills">Skills</button>
-      </div>
-    </div>
-
-    <!-- Tab content: Portfolio -->
-    <section class="tab-panel" id="portfolio" role="tabpanel">
+    <!-- Portfolio -->
+    <section>
       <div class="portfolio-grid">
 
         <a href="https://instagram.com/" target="_blank" rel="noopener" class="project-card card--green">
@@ -121,39 +104,6 @@
       </div>
     </section>
 
-    <!-- Tab content: Skills -->
-    <section class="tab-panel hidden" id="skills" role="tabpanel">
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Engineering</h3>
-          <ul>
-            <li>TypeScript / JavaScript</li>
-            <li>React &amp; Node.js</li>
-            <li>Ruby on Rails</li>
-            <li>Python</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Leadership</h3>
-          <ul>
-            <li>Team management</li>
-            <li>Agile / Scrum</li>
-            <li>Technical strategy</li>
-            <li>Hiring &amp; mentoring</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Tools</h3>
-          <ul>
-            <li>AWS / GCP</li>
-            <li>Docker / Kubernetes</li>
-            <li>CI/CD pipelines</li>
-            <li>Figma</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer>
       <p>&copy; Ed van Beinum <span id="year"></span>. All rights reserved.</p>
@@ -163,22 +113,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.tab-panel');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-
-        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-        panels.forEach(p => p.classList.add('hidden'));
-
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        document.getElementById(target).classList.remove('hidden');
-      });
-    });
   </script>
 </body>
 </html>
