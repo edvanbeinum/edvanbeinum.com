@@ -1,7 +1,0 @@
----
-layout: post
-title: "Configuring Sender Policy Framework"
-date: 2008-12-29 17:53
-
----
-<p>	I had a project that required users to vote and in order to reduce the amount of spam voting, the system would require the user to input their email address and then click on a link in that email to verify their vote. Using CodeIgniter this was pretty straightforward but we kept getting a lot of our confirmation emails rejected or junked by Hotmail and some other webmail providers. So we added SPF details to the DNS of the domain we we&#39;re sending from and this increased our &#39;non-junk&#39; rate markedly.</p><p>	Microsoft have quite a useful step by step guide which will analyze an existing SPF record or help you make one: <a href="http://www.microsoft.com/mscorp/safety/content/technologies/senderid/wizard/default.aspx ">http://www.microsoft.com/mscorp/safety/content/technologies/senderid/wizard/default.aspx </a></p><p>	If you have an existing SPF record then there is a useful validator <a href="http://www.kitterman.com/spf/validate.html">http://www.kitterman.com/spf/validate.html</a></p><p>	If all this SPF talk has left you wondering what the Scottish Police Federation has to do with you sending emails then this http://www.openspf.org/FAQ has a section <a href="http://www.openspf.org/FAQ/What_is_SPF">What is SPF and why is it complicating my life?</a></p>
