@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat ~/.claude/plugins/*/*.json)",
+      "mcp__figma__whoami",
+      "Bash(git rm:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git add:*)",
+      "mcp__figma__get_design_context",
+      "Bash(open /Users/ed/SourceCode/edvanbeinum.com/index.html)",
+      "WebFetch(domain:hub.author.envato.com)"
+    ]
+  }
+}
