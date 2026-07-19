@@ -1,151 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ed van Beinum</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Cormorant+Garamond:ital,wght@1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edwin van Beinum — Software Engineering Manager</title>
+<meta name="description" content="Edwin van Beinum — builder, engineer, manager. iOS apps, furniture, podcasts, and music." />
+<meta property="og:title" content="Edwin van Beinum" />
+<meta property="og:description" content="Builder, engineer, manager. iOS apps, furniture, podcasts, and music." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="img/EvB-headshot-web.jpeg" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>★</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --font-display: "Bricolage Grotesque", sans-serif;
+    --font-body: "Space Grotesk", sans-serif;
+    --font-mono: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display-tracking: -0.02em; --display-weight: 700;
+    --cream: #FBF5EC; --ink: #221E2B; --ink-soft: #6A6475; --line: #E2D8C7;
+    --purple: #4E7D4A; --pink: #FF9EC7;
+    --c-terra: #C2573A; --c-indigo: #463CA6; --c-gold: #9A7B2E; --c-plum: #8E3D6B; --c-teal: #1C6E68; --c-ink: #2A2636;
+  }
+  *{ box-sizing: border-box; }
+  html{ -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body{ margin: 0; background: var(--cream); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5;
+    background-image: radial-gradient(circle at 8% 6%, rgba(78,125,74,0.07), transparent 30%), radial-gradient(circle at 96% 92%, rgba(255,158,199,0.08), transparent 34%); }
+  ::selection{ background: var(--pink); color: var(--ink); }
+  a{ color: inherit; }
+
+  .shell{ max-width: 1240px; margin: 0 auto; padding: clamp(28px, 5vw, 64px) clamp(20px, 5vw, 64px) 60px; display: grid; grid-template-columns: minmax(300px, 380px) 1fr; gap: clamp(40px, 6vw, 100px); align-items: start; }
+
+  .bio{ top: clamp(28px, 5vw, 56px); }
+  .eyebrow{ font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 22px; display: inline-flex; align-items: center; gap: 10px; }
+  .eyebrow .pulse{ width: 8px; height: 8px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 0 4px rgba(78,125,74,0.20); }
+  .name{ font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(54px, 6.4vw, 88px); line-height: 0.92; letter-spacing: var(--display-tracking); margin: 0 0 14px -1px; }
+  .name em{ font-style: italic; position: relative; }
+  .name .mark{ position: relative; display: inline-block; }
+  .name .mark::after{ content:""; position:absolute; left:-2px; right:-4px; bottom: 0.12em; height: 0.34em; background: var(--pink); opacity: .85; z-index:-1; transform: rotate(-1.2deg); border-radius: 2px; }
+  .role{ font-size: 16px; font-weight: 500; color: var(--ink); margin: 0 0 26px; display: flex; align-items: center; gap: 10px; }
+
+  .portrait{ width: 152px; margin: 0 0 24px; position: relative; }
+  .portrait .frame{ position: relative; border-radius: 14px; border: 2px solid var(--ink); overflow: hidden; box-shadow: 7px 7px 0 var(--purple); transition: box-shadow .25s ease, transform .25s ease; }
+  .portrait:hover .frame{ box-shadow: 4px 4px 0 var(--pink); transform: translate(2px,2px); }
+  .portrait img{ display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .portrait .tag{ position: absolute; top: -12px; right: -16px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--cream); border: 2px solid var(--ink); border-radius: 999px; padding: 5px 10px; transform: rotate(6deg); }
+
+  .links{ display: flex; flex-direction: column; gap: 2px; margin: 0 0 30px; }
+  .links a{ display: flex; align-items: baseline; justify-content: space-between; gap: 12px; text-decoration: none; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 500; transition: padding .18s ease, color .18s ease; }
+  .links a .ext{ font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); transition: color .18s ease, transform .18s ease; }
+  .links a:hover{ padding-left: 10px; color: var(--purple); }
+  .links a:hover .ext{ color: var(--purple); transform: translateX(-2px); }
+
+  .now h3{ font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 12px; font-weight: 700; }
+  .now ul{ list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .now li{ display: flex; gap: 12px; align-items: baseline; font-size: 14.5px; }
+  .now li .k{ font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--purple); white-space: nowrap; min-width: 96px; }
+  .now li .v{ font-weight: 500; }
+
+  .index-head{ display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); padding-bottom: 16px; border-bottom: 2px solid var(--ink); margin-bottom: 2px; }
+  .index-head .big{ font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3vw, 40px); letter-spacing: -0.02em; text-transform: none; color: var(--ink); line-height: 1; white-space: nowrap; }
+
+  .row{ display: grid; grid-template-columns: 1fr auto; gap: 8px 26px; align-items: start; text-decoration: none; padding: 30px 22px 30px 14px; margin: 0 -22px 0 -14px; border-bottom: 1px solid var(--line); border-radius: 16px; position: relative; transition: background .22s ease; }
+  .row:hover{ background: color-mix(in srgb, var(--c) 9%, transparent); }
+  .num{ font-family: var(--font-mono); font-size: 14px; font-weight: 700; color: var(--ink-soft); padding-top: 12px; transition: color .2s ease; }
+  .row:hover .num{ color: var(--c); }
+  .row-main{ min-width: 0; }
+  .cat{ display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+  .cat .swatch{ width: 11px; height: 11px; border-radius: 3px; background: var(--c); border: 1px solid rgba(0,0,0,0.15); }
+  .row h2{ font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(34px, 4.4vw, 58px); line-height: 1.02; letter-spacing: var(--display-tracking); margin: 0 0 12px; color: var(--ink); transition: transform .22s ease; }
+  .row:hover h2{ transform: translateX(6px); }
+  .row p{ margin: 0; font-size: 16px; color: #4a4554; max-width: 46ch; }
+  .go{ align-self: center; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--c); font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; opacity: .85; transition: opacity .2s ease; }
+  .go .arr{ transition: transform .2s ease; }
+  .row:hover .go{ opacity: 1; }
+  .row:hover .go .arr{ transform: translateX(5px); }
+
+  footer{ grid-column: 1 / -1; margin-top: 30px; padding-top: 22px; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
+  footer b{ color: var(--purple); }
+
+  @media (max-width: 860px){
+    .shell{ grid-template-columns: 1fr; gap: 40px; }
+    .bio{ position: static; }
+    .row{ grid-template-columns: 54px 1fr; }
+    .go{ grid-column: 2; justify-self: start; margin-top: 12px; align-self: start; }
+  }
+  @media (max-width: 520px){ .now li{ flex-direction: column; gap: 2px; } }
+</style>
 </head>
 <body>
-  <div class="page">
-
-    <!-- Profile -->
-    <section class="profile">
-      <div class="profile-photo">
-        <img class="photo-img" src="img/EvB-headshot-mid-res.jpeg" alt="Ed van Beinum">
-      </div>
-      <div class="profile-info">
-        <h1>Edwin van Beinum</h1>
-        <p class="profile-title">Software Engineering Manager</p>
-        <div class="social-icons">
-          <a href="https://github.com/edvanbeinum" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 3C9.716 3 3 9.716 3 18c0 6.627 4.3 12.248 10.27 14.231.75.138 1.025-.326 1.025-.722 0-.357-.013-1.302-.02-2.556-4.174.907-5.054-2.013-5.054-2.013-.682-1.733-1.665-2.195-1.665-2.195-1.361-.93.103-.911.103-.911 1.505.106 2.297 1.545 2.297 1.545 1.337 2.291 3.509 1.629 4.364 1.246.136-.969.523-1.63.951-2.004-3.33-.379-6.831-1.665-6.831-7.41 0-1.637.585-2.976 1.544-4.026-.155-.38-.669-1.904.147-3.969 0 0 1.26-.403 4.125 1.537A14.358 14.358 0 0118 9.867c1.275.006 2.56.172 3.76.505 2.863-1.94 4.12-1.537 4.12-1.537.819 2.065.305 3.589.15 3.969.96 1.05 1.542 2.389 1.542 4.026 0 5.76-3.507 7.027-6.847 7.398.539.464 1.018 1.381 1.018 2.784 0 2.01-.018 3.63-.018 4.123 0 .4.27.868 1.032.72C28.705 30.243 33 24.625 33 18c0-8.284-6.716-15-15-15z" fill="#3d3d3d"/>
-            </svg>
-          </a>
-          <a href="https://twitter.com/edvanbeinum" target="_blank" rel="noopener" aria-label="Twitter / X">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M27.46 6h4.054l-8.851 10.117L33 30h-8.154l-6.387-8.354L11.3 30H7.243l9.467-10.818L3 6h8.36l5.774 7.633L27.46 6zm-1.422 21.593h2.246L10.062 8.296H7.652l18.386 19.297z" fill="#3d3d3d"/>
-            </svg>
-          </a>
-          <a href="https://linkedin.com/in/edvanbeinum" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M30 3H6a3 3 0 00-3 3v24a3 3 0 003 3h24a3 3 0 003-3V6a3 3 0 00-3-3zM12.75 27.75H9V14.25h3.75v13.5zm-1.875-15.356a2.172 2.172 0 110-4.344 2.172 2.172 0 010 4.344zM27.75 27.75H24v-6.75c0-1.657-.672-2.25-1.875-2.25S20.25 19.747 20.25 21v6.75H16.5V14.25h3.6v1.875C20.7 15.04 22.09 14.25 24 14.25c2.25 0 3.75 1.5 3.75 4.5v9z" fill="#3d3d3d"/>
-            </svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M33.52 9.96a4.125 4.125 0 00-2.903-2.918C28.056 6.375 18 6.375 18 6.375s-10.056 0-12.618.667A4.125 4.125 0 002.48 9.96C1.875 12.54 1.875 18 1.875 18s0 5.46.605 8.04a4.125 4.125 0 002.902 2.918C7.944 29.625 18 29.625 18 29.625s10.056 0 12.617-.667a4.125 4.125 0 002.903-2.918C34.125 23.46 34.125 18 34.125 18s0-5.46-.605-8.04zM14.625 22.875v-9.75L23.25 18l-8.625 4.875z" fill="#3d3d3d"/>
-            </svg>
-          </a>
-          <span class="social-divider"></span>
-          <a href="#" class="social-text-link">Download CV</a>
-          <a href="mailto:ed@edvanbeinum.com" class="social-text-link">Contact</a>
+  <div class="shell" data-screen-label="Edwin van Beinum — Portfolio">
+    <aside class="bio">
+      <h1 class="name">Edwin <em>van</em><br /><span class="mark">Beinum</span></h1>
+      <p class="role">Builder, engineer, manager</p>
+      <div class="portrait">
+        <div class="frame">
+          <img src="img/EvB-headshot-web.jpeg" alt="Edwin van Beinum">
         </div>
+        <span class="tag">★ hello</span>
       </div>
-    </section>
+      <nav class="links">
+        <a href="#">LinkedIn <span class="ext">↗</span></a>
+        <a href="#">Download CV <span class="ext">PDF ↓</span></a>
+        <a href="mailto:edvanbeinum@gmail.com">Contact <span class="ext">→</span></a>
+      </nav>
+    </aside>
 
-    <!-- Stats -->
-    <section class="stats">
-      <div class="stat">
-        <span class="stat-number">7</span>
-        <span class="stat-label">Years of work experience</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">50+</span>
-        <span class="stat-label">Completed projects</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">20+</span>
-        <span class="stat-label">Satisfied customers</span>
-      </div>
-    </section>
+    <main class="index">
+      <div class="index-head"><span class="big">Selected work</span></div>
+      <a class="row" href="https://apps.apple.com/us/app/night-knight-white-noise/id1078483887" style="--c: var(--c-indigo)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>iOS App</span><h2>Night Knight</h2><p>The simplest white noise app on iOS.</p></div>
+        <span class="go">App Store <span class="arr">→</span></span>
+      </a>
+      <a class="row" href="#" style="--c: var(--c-ink)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>iOS App</span><h2>Lift Machine</h2><p>Workout tracker that's as simple as a pen and a notebook but with some machine learning smarts.</p></div>
+        <span class="go">App Store <span class="arr">→</span></span>
+      </a>
+      <a class="row" href="https://www.instagram.com/symondsfurniture/" style="--c: var(--c-terra)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>Furniture &amp; Woodworking</span><h2>Symonds Furniture</h2><p>Thoughtful wood creations and things that take far longer than expected.</p></div>
+        <span class="go">Instagram <span class="arr">→</span></span>
+      </a>
+      <a class="row" href="https://podcasts.apple.com/us/podcast/seven-days-to-play/id1260373097" style="--c: var(--c-gold)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>Podcast</span><h2>Seven Days to Play</h2><p>Your weekly mobile gaming podcast. [on hiatus]</p></div>
+        <span class="go">Apple Podcasts <span class="arr">→</span></span>
+      </a>
+      <a class="row" href="https://open.spotify.com/artist/6tF5oikMfjps203aVlIm1h?si=ubzsMO56QTeZCK-aBXJ4xQ" style="--c: var(--c-plum)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>Music</span><h2>Quick Like Bunnies</h2><p>Slow industrial techno.</p></div>
+        <span class="go">Spotify <span class="arr">→</span></span>
+      </a>
+      <a class="row" href="https://open.spotify.com/artist/3HzpLXiRxS7XaX1nW5CQZn?si=7Fvedw6nQ2CuiYYzTk1zEQ" style="--c: var(--c-teal)">
+        <div class="row-main"><span class="cat"><span class="swatch"></span>Music</span><h2>TKFGO</h2><p>Ambient house.</p></div>
+        <span class="go">Spotify <span class="arr">→</span></span>
+      </a>
+    </main>
 
-    <!-- Portfolio -->
-    <section>
-      <div class="portfolio-grid">
-
-        <a href="https://instagram.com/" target="_blank" rel="noopener" class="project-card card--green">
-          <div class="card-header">
-            <span class="card-tag">Furniture &amp; Woodworking</span>
-            <h3 class="card-title">Symonds Furniture</h3>
-          </div>
-          <div class="card-body">
-            <p>Thoughtful wood creations — joinery, hand tools, and things that take far longer than expected.</p>
-            <span class="card-link">View on Instagram &rarr;</span>
-          </div>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" class="project-card card--slate">
-          <div class="card-header">
-            <span class="card-tag">iOS App</span>
-            <h3 class="card-title">Night Knight</h3>
-          </div>
-          <div class="card-body">
-            <p>The simplest white noise app on iOS.</p>
-            <span class="card-link">Download on the App Store &rarr;</span>
-          </div>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" class="project-card card--rust">
-          <div class="card-header">
-            <span class="card-tag">Podcast</span>
-            <h3 class="card-title">Seven Days to Play</h3>
-          </div>
-          <div class="card-body">
-            <p>Your weekly mobile gaming podcast.</p>
-            <span class="card-link">Listen on Apple Podcasts &rarr;</span>
-          </div>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" class="project-card card--plum">
-          <div class="card-header">
-            <span class="card-tag">Music</span>
-            <h3 class="card-title">Quick Like Bunnies</h3>
-          </div>
-          <div class="card-body">
-            <p>Slow industrial techno.</p>
-            <span class="card-link">Listen on Spotify &rarr;</span>
-          </div>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" class="project-card card--teal">
-          <div class="card-header">
-            <span class="card-tag">Music</span>
-            <h3 class="card-title">TKFGO</h3>
-          </div>
-          <div class="card-body">
-            <p>Ambient house.</p>
-            <span class="card-link">Listen on Spotify &rarr;</span>
-          </div>
-        </a>
-
-        <a href="#" target="_blank" rel="noopener" class="project-card card--charcoal">
-          <div class="card-header">
-            <span class="card-tag">Open Source</span>
-            <h3 class="card-title">Track Manager</h3>
-          </div>
-          <div class="card-body">
-            <p>A command line app for managing song distribution.</p>
-            <span class="card-link">View on GitHub &rarr;</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-      <p>&copy; Ed van Beinum <span id="year"></span>. All rights reserved.</p>
+      <span>© Edwin van Beinum 2026 — All rights reserved</span>
     </footer>
-
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
