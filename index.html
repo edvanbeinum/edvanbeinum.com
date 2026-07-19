@@ -76,6 +76,7 @@
   .go .arr{ transition: transform .2s ease; }
   .row:hover .go{ opacity: 1; }
   .row:hover .go .arr{ transform: translateX(5px); }
+  .go.soon{ color: var(--ink-soft); border: 1.5px dashed var(--ink-soft); border-radius: 999px; padding: 5px 12px; font-size: 11px; opacity: .7; }
 
   footer{ grid-column: 1 / -1; margin-top: 30px; padding-top: 22px; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); }
   footer b{ color: var(--purple); }
@@ -101,7 +102,7 @@
         <span class="tag">★ hello</span>
       </div>
       <nav class="links">
-        <a href="#">LinkedIn <span class="ext">↗</span></a>
+        <a href="https://www.linkedin.com/in/edvanbeinum">LinkedIn <span class="ext">↗</span></a>
         <a href="#">Download CV <span class="ext">PDF ↓</span></a>
         <a href="mailto:edvanbeinum@gmail.com">Contact <span class="ext">→</span></a>
       </nav>
@@ -113,10 +114,10 @@
         <div class="row-main"><span class="cat"><span class="swatch"></span>iOS App</span><h2>Night Knight</h2><p>The simplest white noise app on iOS.</p></div>
         <span class="go">App Store <span class="arr">→</span></span>
       </a>
-      <a class="row" href="#" style="--c: var(--c-ink)">
+      <div class="row" style="--c: var(--c-ink)">
         <div class="row-main"><span class="cat"><span class="swatch"></span>iOS App</span><h2>Lift Machine</h2><p>Workout tracker that's as simple as a pen and a notebook but with some machine learning smarts.</p></div>
-        <span class="go">App Store <span class="arr">→</span></span>
-      </a>
+        <span class="go soon">Coming soon</span>
+      </div>
       <a class="row" href="https://www.instagram.com/symondsfurniture/" style="--c: var(--c-terra)">
         <div class="row-main"><span class="cat"><span class="swatch"></span>Furniture &amp; Woodworking</span><h2>Symonds Furniture</h2><p>Thoughtful wood creations and things that take far longer than expected.</p></div>
         <span class="go">Instagram <span class="arr">→</span></span>
